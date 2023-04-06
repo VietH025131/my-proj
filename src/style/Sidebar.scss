@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  font-family: 'Fira Sans', sans-serif;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .sidebar{
+    transition: .5s;
+    width: 270px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .sidebar{
+    width: 270px;
+  }
+}
+@media screen and (min-width: 991px) {
+  .sidebar{
+    width: 20%;
+  }
+  .close-btn{
+    display: none;
+  }
+}
+
+.logo-details{
+  display: flex;
+  justify-content: center;
+}
+.sidebar{
+  height: 100vh;
+  position: fixed;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(80,143,244,.1);
+  font-size: 20px;
+  
+  
+}
+.menu{
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+  li{
+    position: relative;
+    color: #555;
+    padding: 20px 10px;
+    
+  }
+  .title-wrapper{
+    display: flex;
+    flex-direction: row;
+    .title{
+      width: 220px;
+      padding: 10px 10px;
+      text-indent: 20px;
+      display: flex;
+      flex-direction:row;
+      justify-content: flex-start;
+      font-size: 20px;
+      gap: 5px;
+      }
+      .icon{
+        transform: translateY(5px);
+        color: #20c997;
+        font-size: 15px;
+      }
+      .righticon{
+        color: #898989;
+        font-size: 15px;
+        transform: translateY(15px);
+        transition: all .3s ease-in-out;
+        display: inline-block;
+        &.open{
+          transform: rotateZ(90deg);
+        }
+    }
+  }
+}
+
+.show{
+  &-enter,&-leave-to{
+    transform: translateX(-300px);
+    
+  }
+  &-enter-active,&-leave-active{
+    transition: all .8s;
+  }
+}
